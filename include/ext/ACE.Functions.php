@@ -670,7 +670,10 @@ Redirect to <a href="' . $sLocation . '">' . $sLocation . '</a>
     static function StrUnderScore($sStr)
     {
         $sStr[0] = strtolower($sStr[0]);
-        $func = create_function('$c', 'return "_" . strtolower($c[1]);');
+        $func = function ($c){
+            return "_" . strtolower($c[1]);
+        };
+
         return preg_replace_callback('/([A-Z])/', $func, $sStr);
     }
 
@@ -686,7 +689,9 @@ Redirect to <a href="' . $sLocation . '">' . $sLocation . '</a>
         if ($bCapitaliseFirstChar) {
             $sStr[0] = strtoupper($sStr[0]);
         }
-        $func = create_function('$c', 'return strtoupper($c[1]);');
+        $func = function ($c){
+            return strtoupper($c[1]);
+        };
         return preg_replace_callback('/_([a-z])/', $func, $sStr);
     }
 

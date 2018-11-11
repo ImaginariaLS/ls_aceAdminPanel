@@ -82,7 +82,7 @@
 </div>
 
 <script type="">
-    var $ace = $ace || {};
+    var $ace = $ace || { };
 
     $ace.submenuAction = function (el) {
         var target = $(el);

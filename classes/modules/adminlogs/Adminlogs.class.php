@@ -170,7 +170,7 @@ class LsAdminLogs extends Module
             $sLogIndex = time() . '-' . round(rand(100, 999));
         } while (!isset($this->aFileLogs[$sLogIndex]));
 
-        $this->aFileLogs[$sLogIndex] = $aLogDefault;
+        $this->aFileLogs[$sLogIndex] = $this->aLogDefault; // was undefined `$aLogDefault`
         return $sLogIndex;
     }
 

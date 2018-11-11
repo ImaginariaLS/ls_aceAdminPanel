@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    var aceAdmin = aceAdmin || {}
+    var aceAdmin = aceAdmin || { }
 
     aceAdmin.inviteMode = function (mode) {
         if (mode == 'mail') {

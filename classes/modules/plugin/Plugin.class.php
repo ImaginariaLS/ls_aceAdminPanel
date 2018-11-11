@@ -309,7 +309,7 @@ class PluginAceadminpanel_ModulePlugin extends AceModulePlugin
             if (!$aPliginProps['property']->priority) {
                 if (isset($aPluginsData[$sPluginCode]) AND isset($aPluginsData[$sPluginCode]['priority'])) {
                     $aPliginProps['priority'] = $aPluginsData[$sPluginCode]['priority'];
-                } elseif (isset($aPriority[$sPluginCode])) {
+                } elseif (isset($aPriority) && isset($aPriority[$sPluginCode])) {
                     $aPliginProps['priority'] = $aPriority[$sPluginCode];
                 } else {
                     $aPliginProps['priority'] = 0; //$nPriority;

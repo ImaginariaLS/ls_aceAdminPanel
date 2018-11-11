@@ -2,7 +2,7 @@
 
 {block name="sidebar"}
     <script type="text/javascript">
-        if (!aceAdmin.user) aceAdmin.user = {};
+        if (!aceAdmin.user) aceAdmin.user = { };
 
         aceAdmin.user.messageSubmit = function (msg) {
             var i, el;

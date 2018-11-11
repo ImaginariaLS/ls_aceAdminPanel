@@ -98,8 +98,8 @@ class PluginAceadminpanel_ActionAdmin_Event extends PluginAceadminpanel_Inherit_
     {
         $this->aConfig = array(
             'reserverd_urls' => array('admin'),
-            'votes_per_page' => 15,
-            'items_per_page' => 15,
+            'votes_per_page' => Config::Get('plugin.aceadminpanel.votes_per_page'),
+            'items_per_page' => Config::Get('plugin.aceadminpanel.items_per_page'),
             'vote_value' => 10,
             'edit_footer_text' => '<div style="border-top:1px solid #CCC;color:#F99;text-align:right;font-size:0.9em;">Edited by admin at [@date]</div>',
             'path_themes' => Config::Get('path.root.server') . '/templates/skin',

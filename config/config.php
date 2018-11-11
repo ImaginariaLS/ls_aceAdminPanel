@@ -141,7 +141,10 @@ $config['autonomous']['events'] = array();
 $config['compatible'] = array(//'default' => 'compatible',
 );
 
-//$config['altocms-logo'] = false;
+$config['votes_per_page'] = 15;
+$config['items_per_page'] = 10;
+
+$config['altocms-logo'] = false;
 
 return $config;
 

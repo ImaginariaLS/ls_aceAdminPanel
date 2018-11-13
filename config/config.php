@@ -146,6 +146,11 @@ $config['items_per_page'] = 10;
 
 $config['altocms-logo'] = false;
 
+$config['hook_priority'] = [
+    'engine_init_complete'  =>  1000,
+    'init_action'           =>  1000
+];
+
 return $config;
 
 // EOF

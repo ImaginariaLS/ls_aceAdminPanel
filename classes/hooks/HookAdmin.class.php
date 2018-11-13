@@ -25,6 +25,15 @@ class PluginAceadminpanel_HookAdmin extends Hook
         'userfields', 'db', 'banlist', 'invites',
     );
 
+    const ConfigKey = 'aceadminpanel';
+    const HooksArray = [
+        'engine_init_complete'      =>  'EngineInitComplete',
+        'init_action'               =>  'InitAction',
+        'template_html_head_end'    =>  'HtmlHeadEnd',
+        'template_statistics_performance_item'  =>  'TplStatisticsPerformanceItem',
+        'template_profile_sidebar_end'  =>  'TplProfileSidebarEnd'
+    ];
+
     public function RegisterHook()
     {
         if (ACE::IsMobile()) return;
@@ -44,11 +53,16 @@ class PluginAceadminpanel_HookAdmin extends Hook
             if ($bCompatible) $this->_preInit();
         }
         $this->_checkSkinDir();
-        $this->AddHook('engine_init_complete', 'EngineInitComplete', __CLASS__, 1000);
-        $this->AddHook('init_action', 'InitAction', __CLASS__, 1000);
-        $this->AddHook('template_html_head_end', 'HtmlHeadEnd', __CLASS__);
-        $this->AddHook('template_statistics_performance_item', 'TplStatisticsPerformanceItem', __CLASS__);
-        $this->AddHook('template_profile_sidebar_end', 'TplProfileSidebarEnd', __CLASS__);
+
+        $plugin_config_key = $this::ConfigKey;
+        foreach ($this::HooksArray as $hook => $callback) {
+            $this->AddHook(
+                $hook,
+                $callback,
+                __CLASS__,
+                Config::Get("plugin.{$plugin_config_key}.hook_priority.{$hook}") ?? 1
+            );
+        }
     }
 
     protected function _preInit()

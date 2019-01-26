@@ -13,7 +13,7 @@
  *----------------------------------------------------------------------------
  */
 
-if (!class_exists('Config')) die('Hacking attempt!');
+if (!class_exists('Config')) die('AceAdminPanel : Hacking attempt!');
 
 if (defined('ACEADMINPANEL_VERSION')) return array();
 

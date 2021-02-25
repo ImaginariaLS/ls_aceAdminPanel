@@ -11,7 +11,7 @@
                             {if ($aItem.label)}
                                 {$aItem.label}:
                             {/if}
-                            <span class="adm_info_value">{$aItem.value}</span> {if ($aItem['.html'])}{$aItem['.html']}{/if}
+                            <span class="adm_info_value">{$aItem.value}</span>
                         </p>
                     {/foreach}
                     <hr/>

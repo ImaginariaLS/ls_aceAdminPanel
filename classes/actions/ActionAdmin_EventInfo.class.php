@@ -131,11 +131,17 @@ class PluginAceadminpanel_ActionAdmin_EventInfo extends PluginAceadminpanel_Inhe
                 if ($aPliginProps['property']->version) {
                     $aPluginInfo['value'] = 'v.' . htmlspecialchars((string)$aPliginProps['property']->version);
                 }
+
+                /*
+
                 $sPluginClass = 'Plugin' . ucfirst($sPlugin);
+
                 if (class_exists($sPluginClass) AND method_exists($sPluginClass, 'GetUpdateInfo')) {
                     $oPlugin = new $sPluginClass;
                     $aPluginInfo['.html'] = ' - ' . $oPlugin->GetUpdateInfo();
                 }
+                */
+
                 $aPluginList[$sPlugin] = $aPluginInfo;
             }
         }

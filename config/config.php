@@ -13,7 +13,7 @@
  *----------------------------------------------------------------------------
  */
 
-if (!class_exists('Config')) die('Hacking attempt!');
+if (!class_exists('Config')) die('AceAdminPanel : Hacking attempt!');
 
 if (defined('ACEADMINPANEL_VERSION')) return array();
 
@@ -145,6 +145,11 @@ $config['votes_per_page'] = 15;
 $config['items_per_page'] = 10;
 
 $config['altocms-logo'] = false;
+
+$config['hook_priority'] = [
+    'engine_init_complete'  =>  1000,
+    'init_action'           =>  1000
+];
 
 return $config;
 

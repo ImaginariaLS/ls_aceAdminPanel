@@ -13,7 +13,7 @@
  *----------------------------------------------------------------------------
  */
 
-if (!class_exists('Config')) die('Hacking attempt!');
+if (!class_exists('Config')) die('AceAdminPanel : Config : Hacking attempt!');
 
 /**
  * Разрешены ли ф-ции API
